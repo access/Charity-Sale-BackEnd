@@ -18,8 +18,3 @@ services:
       - "5000:80"
     depends_on:
       - db
-healthcheck:
-        test: ["CMD", "ping", "-n", "15", "localhost"]
-        interval: 5s
-        timeout: 5s
-        retries: 1
