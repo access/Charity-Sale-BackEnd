@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CharitySaleBackEnd</name>
+    </assembly>
+    <members>
+        <member name="M:CharitySaleBackEnd.Controllers.BulkUploadController.PostProductItem(System.String)">
+            <summary>
+            Allows uploading products data from configuration files such as JSON, XML, into a database.
+            </summary>
+            <remarks>
+                POST: api/BulkUpload
+                <para>
+                    "headers": { 'Content-Type': 'application/x-www-form-urlencoded' }
+                </para>
+                <para>
+                    "bulkdata": "data:application/json;base64,Ww0KICB7DQogICAg...Q0KXQ=="
+                </para>
+            </remarks>
+            <param name="bulkdata"></param>
+            <returns>Empty response with status code</returns>
+            <response code="201">Successful file upload code</response>
+            <response code="204">Input data incorrect</response>     
+            <response code="404">Database error</response>     
+        </member>
+        <member name="M:CharitySaleBackEnd.Controllers.CategoryItemsController.GetCategories">
+            <summary>
+            Get a list of all product categories
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CharitySaleBackEnd.Controllers.ProductItemsController.GetProducts">
+            <summary>
+            Get a list of all products
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CharitySaleBackEnd.Controllers.ProductItemsController.GetProductItem(System.Int32)">
+            <summary>
+            Get a product by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CharitySaleBackEnd.Controllers.ProductItemsController.PutProductItem(System.Int32,CharitySaleBackEnd.Models.ProductItem)">
+            <summary>
+            Change product (quantity in stock) by id
+            </summary>
+            <param name="id"></param>
+            <param name="productItem"></param>
+            <returns>Empty response with status code</returns>
+            PUT: api/ProductItems/5
+            <response code="201">Successful item change</response>
+            <response code="204">Database has not changed</response>     
+            <response code="404">Database error</response>     
+        </member>
+        <member name="M:CharitySaleBackEnd.Controllers.ProductItemsController.PutProductItem(CharitySaleBackEnd.Models.Products)">
+            <summary>
+            Checkout product list of order
+            </summary>
+            <param name="productItems"></param>
+            <returns>Empty response with status code</returns>
+            PUT: api/ProductItems/5
+            <response code="201">Successful order - number of items in stock has been updated</response>
+            <response code="205">Not enough goods in stock</response>     
+            <response code="404">Database error</response>     
+        </member>
+        <member name="M:CharitySaleBackEnd.Controllers.ProductItemsController.PostProductItem(CharitySaleBackEnd.Models.ProductItem)">
+            <summary>
+            Post a new product
+            </summary>
+            <param name="productItem"></param>
+            <returns>Empty response with status code</returns>
+            POST: api/ProductItems
+            <response code="201">Item published successfully</response>
+            <response code="205">Incorrect incoming data</response>     
+            <response code="404">Database error</response>     
+        </member>
+        <member name="M:CharitySaleBackEnd.Controllers.ProductItemsController.DeleteProductItem(System.Int32)">
+            <summary>
+            Delete product by id
+            </summary>
+            <param name="id"></param>
+            <returns>Empty response with status code</returns>
+        </member>
+        <member name="M:CharitySaleBackEnd.Services.DataFile.#ctor(System.String)">
+            <summary>
+            Extract data from content of @data string like:
+            data:application/json;base64,Ww0KICB7DQogICAg...Q0KXQ==
+            </summary>
+            <param name="srcContent">Content of @data string</param>
+        </member>
+    </members>
+</doc>
