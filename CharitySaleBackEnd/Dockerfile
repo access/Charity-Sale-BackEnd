@@ -10,10 +10,8 @@ RUN mkdir /app/uploads/images
 COPY uploads/images/ /app/uploads/images
 COPY CharitySaleBackEnd.xml /app
 WORKDIR /app
-
 EXPOSE 80
 EXPOSE 443
-
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
