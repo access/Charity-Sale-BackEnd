@@ -1,4 +1,4 @@
->  ##### Test task for Software Engineer - Home_ex_12_2020_HMBS.pdf
+>  ##### Tech task for Software Engineer - Home_ex_12_2020_HMBS.pdf
 
 ### Charity-Sale-BackEnd
 
